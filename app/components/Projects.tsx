@@ -38,9 +38,9 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-32 md:py-48">
+    <section id="projects" className="py-20 md:py-32">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="mb-24 fade-up">
+        <div className="mb-16 fade-in">
           <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400 mb-4">
             Selected Works
           </h2>

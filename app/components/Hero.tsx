@@ -17,18 +17,20 @@ export default function Hero() {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
-    <section className="min-h-screen flex items-end pb-32 md:pb-40 pt-40 relative overflow-hidden">
+    <section className="min-h-screen flex items-end pb-20 md:pb-32 pt-40 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full">
         <div
           ref={ref as React.RefObject<HTMLDivElement>}
           className={`max-w-6xl fade-up ${isVisible ? 'visible' : ''}`}
         >
-          <h1 className="text-[13vw] md:text-[9vw] font-medium leading-[0.85] tracking-tighter mb-12 text-neutral-900 dark:text-white">
+          <h1 className="text-[13vw] md:text-[9vw] font-medium leading-[0.85] tracking-tighter mb-4 text-neutral-900 dark:text-white">
             Prachi <br />
-            <span className="serif italic font-light ml-[10vw]">Upadhyay</span> <br />
-            & <span className="text-neutral-400 dark:text-neutral-600">{displayText}</span>
-            <span className="typing-cursor"></span>
+            <span className="serif italic font-light ml-[5vw] md:ml-[10vw]">Upadhyay</span>
           </h1>
+          <div className="h-[2em] mb-12 flex items-center text-neutral-400 dark:text-neutral-600 text-[6vw] md:text-[4vw] tracking-normal font-light">
+             <span className="block mt-2">{displayText}</span>
+             <span className="typing-cursor"></span>
+          </div>
 
           <div className="flex flex-col md:flex-row justify-between items-end border-t border-neutral-200 dark:border-neutral-800 pt-8 mt-24">
               <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 max-w-sm font-light leading-relaxed mb-8 md:mb-0">

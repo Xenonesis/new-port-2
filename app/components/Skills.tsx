@@ -1,6 +1,6 @@
 'use client';
 
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+
 
 const skills = [
   { name: 'Programming', description: 'C, C++, Python, DSA' },
@@ -13,23 +13,14 @@ const skills = [
 ];
 
 export default function Skills() {
-  const labelObserver = useIntersectionObserver();
-  const contentObserver = useIntersectionObserver();
-
   return (
-    <section id="skills" className="py-32 border-t border-neutral-200 dark:border-neutral-900">
+    <section id="skills" className="py-20 md:py-32 border-t border-neutral-200 dark:border-neutral-900">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row gap-20">
-          <div 
-            ref={labelObserver.ref as React.RefObject<HTMLDivElement>}
-            className={`md:w-1/3 fade-up ${labelObserver.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-700 ease-out`}
-          >
+          <div className="md:w-1/3 fade-in">
             <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">Technical Stack</h2>
           </div>
-          <div 
-            ref={contentObserver.ref as React.RefObject<HTMLDivElement>}
-            className={`md:w-2/3 fade-up ${contentObserver.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-700 ease-out delay-150`}
-          >
+          <div className="md:w-2/3 fade-in delay-150">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8">
               {skills.map((skill) => (
                 <div key={skill.name} className="group">

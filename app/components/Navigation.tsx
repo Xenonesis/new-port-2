@@ -1,17 +1,23 @@
 'use client';
 
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 interface NavigationProps {
   onMenuToggle: () => void;
 }
 
 export default function Navigation({ onMenuToggle }: NavigationProps) {
-  const { isDark, toggleTheme, mounted } = useTheme();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <nav 
-      className="fixed w-full z-50 mix-blend-difference text-white transition-all duration-300 top-0"
+      className="fixed w-full z-50 mix-blend-difference text-white transition-all duration-300 top-0 pointer-events-auto"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -23,7 +29,7 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
             className="text-xl font-medium tracking-tighter hover:opacity-70 transition-opacity"
             aria-label="Home"
           >
-            alex.dev
+            prachi.dev
           </a>
           
           {/* Desktop Menu */}
@@ -53,11 +59,14 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
               Contact
             </a>
             <button 
-              className="hover:opacity-70 transition-opacity"
-              onClick={toggleTheme}
-              aria-label={mounted ? (isDark ? 'Switch to light mode' : 'Switch to dark mode') : 'Toggle theme'}
+              className="hover:opacity-70 transition-opacity min-w-[60px] text-right"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              aria-label={mounted ? (theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode') : 'Toggle theme'}
+              suppressHydrationWarning
             >
-              <span className="text-sm font-medium uppercase tracking-wide">Theme</span>
+              <span className="text-sm font-medium uppercase tracking-wide">
+                {mounted ? (theme === 'dark' ? 'Light' : 'Dark') : 'Theme'}
+              </span>
             </button>
           </div>
 
