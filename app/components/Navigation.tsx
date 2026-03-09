@@ -17,7 +17,7 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
 
   return (
     <nav 
-      className="fixed w-full z-50 mix-blend-difference text-white transition-all duration-300 top-0 pointer-events-auto"
+      className="fixed w-full z-50 backdrop-blur-xl bg-white/70 dark:bg-neutral-950/70 border-b border-neutral-200/50 dark:border-neutral-800/50 text-neutral-900 dark:text-neutral-100 transition-all duration-300 top-0 pointer-events-auto"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -58,16 +58,30 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
             >
               Contact
             </a>
-            <button 
-              className="hover:opacity-70 transition-opacity min-w-[60px] text-right"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              aria-label={mounted ? (theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode') : 'Toggle theme'}
-              suppressHydrationWarning
-            >
-              <span className="text-sm font-medium uppercase tracking-wide">
-                {mounted ? (theme === 'dark' ? 'Light' : 'Dark') : 'Theme'}
-              </span>
-            </button>
+            {/* Theme Toggle Links */}
+            <div className="flex items-center gap-4 ml-4 border-l border-neutral-300 dark:border-neutral-700 pl-8">
+              <button 
+                className={`hover:opacity-70 transition-opacity text-xs font-semibold uppercase tracking-wider ${mounted && theme === 'light' ? 'text-black dark:text-white underline underline-offset-4' : 'text-neutral-500'}`}
+                onClick={() => setTheme('light')}
+                suppressHydrationWarning
+              >
+                Light
+              </button>
+              <button 
+                className={`hover:opacity-70 transition-opacity text-xs font-semibold uppercase tracking-wider ${mounted && theme === 'dark' ? 'text-black dark:text-white underline underline-offset-4' : 'text-neutral-500'}`}
+                onClick={() => setTheme('dark')}
+                suppressHydrationWarning
+              >
+                Dark
+              </button>
+              <button 
+                className={`hover:opacity-70 transition-opacity text-xs font-semibold uppercase tracking-wider ${mounted && theme === 'system' ? 'text-black dark:text-white underline underline-offset-4' : 'text-neutral-500'}`}
+                onClick={() => setTheme('system')}
+                suppressHydrationWarning
+              >
+                System
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}

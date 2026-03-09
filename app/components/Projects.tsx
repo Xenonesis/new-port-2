@@ -7,33 +7,21 @@ const projects: Project[] = [
   {
     id: '1',
     number: '01',
-    title: 'Breast Cancer Detection System',
-    description:
-      'A machine learning classification model utilizing SVM and KNN to predict breast cancer from cytology Data. Implemented with Python and Pandas.',
-    tags: ['Python', 'Machine Learning', 'Classification'],
+    title: 'Pneumonia Detection ML',
+    description: 'A machine learning system for detecting pneumonia from X-ray imaging using advanced deep learning classification techniques.',
+    tags: ['Python', 'Deep Learning', 'Classification', 'Healthcare'],
     liveUrl: '#',
-    sourceUrl: '#',
+    sourceUrl: 'https://github.com/prachiupadhyay1211/pneumonia-detection-ml',
   },
   {
     id: '2',
     number: '02',
-    title: 'Interactive Web Portfolio',
-    description:
-      'A responsive and visually stunning frontend portfolio showcasing smooth animations and user-centric design principles.',
-    tags: ['JavaScript', 'HTML/CSS', 'Frontend'],
+    title: 'TB Visualization',
+    description: 'Data analytics and visualization platform for Tuberculosis metrics, driving insights through data manipulation using Pandas and Numpy.',
+    tags: ['Data Visualization', 'Pandas', 'Numpy', 'Data Science'],
     liveUrl: '#',
-    sourceUrl: '#',
-  },
-  {
-    id: '3',
-    number: '03',
-    title: 'Vulnerability Analysis Report',
-    description:
-      'Conducted extensive web pentesting and brute force attack simulations using Crunch and Cewl to identify and patch security vulnerabilities.',
-    tags: ['Cybersecurity', 'Pentesting', 'Networking'],
-    liveUrl: '#',
-    sourceUrl: '#',
-  },
+    sourceUrl: 'https://github.com/prachiupadhyay1211/TB_Visualization',
+  }
 ];
 
 export default function Projects() {
