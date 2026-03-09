@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +20,78 @@
 }
 
 body {
+  font-family: var(--font-sans), sans-serif;
+  font-feature-settings: "cv11", "ss01";
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.03em;
+}
+
+/* Utility Classes */
+.serif {
+  font-family: var(--font-serif), serif;
+}
+
+/* Fade Up Animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typing Cursor */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 1.2s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Image Reveal */
+.image-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.group:hover .image-reveal {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #e2e8f0;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+/* Selection Styling */
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+.dark ::selection {
+  background-color: #fff;
+  color: #000;
 }
