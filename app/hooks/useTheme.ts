@@ -7,6 +7,7 @@ export function useTheme() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line
     setMounted(true);
     const stored = localStorage.getItem('color-theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;

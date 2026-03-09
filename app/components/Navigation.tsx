@@ -12,6 +12,7 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+     
     setMounted(true);
   }, []);
 

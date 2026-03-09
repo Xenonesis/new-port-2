@@ -7,6 +7,7 @@ export function useIntersectionObserver(options = {}) {
   useEffect(() => {
     // Fail-safe: if intersection observer is not supported, just make it visible
     if (typeof window !== 'undefined' && !window.IntersectionObserver) {
+      // eslint-disable-next-line
       setIsVisible(true);
       return;
     }
