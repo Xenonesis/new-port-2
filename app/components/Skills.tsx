@@ -3,14 +3,13 @@
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const skills = [
-  { name: 'HTML/CSS', description: 'Semantic & Modern' },
-  { name: 'JavaScript', description: 'ES6+ & Typescript' },
-  { name: 'React', description: 'Next.js & Remix' },
-  { name: 'Node.js', description: 'Scalable Backends' },
-  { name: 'PostgreSQL', description: 'Database Design' },
-  { name: 'Cloud', description: 'AWS & Vercel' },
-  { name: 'Design', description: 'Figma & Systems' },
-  { name: 'Tools', description: 'Git & Docker' },
+  { name: 'Programming', description: 'C, C++, Python, DSA' },
+  { name: 'Machine Learning', description: 'Numpy, Pandas, SVM, KNN' },
+  { name: 'ML Techniques', description: 'Classification, Regression' },
+  { name: 'Frontend', description: 'HTML/CSS, JavaScript' },
+  { name: 'Cybersecurity', description: 'Networking & Cloud' },
+  { name: 'Pentesting', description: 'Web Pentesting, Brute Force' },
+  { name: 'Security Tools', description: 'Crunch, Cewl, Steganography' },
 ];
 
 export default function Skills() {

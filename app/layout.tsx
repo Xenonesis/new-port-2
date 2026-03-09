@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Dev | Software Engineer",
-  description: "Portfolio of a Full Stack Software Developer specialized in building exceptional digital experiences.",
+  title: "Prachi Upadhyay | CSAIML Developer",
+  description: "Portfolio of Prachi Upadhyay, CSAIML student at GL Bajaj, specializing in Machine Learning, Frontend, and Cybersecurity.",
 };
 
 export default function RootLayout({

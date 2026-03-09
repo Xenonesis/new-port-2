@@ -25,14 +25,14 @@ export default function About() {
             className={`md:w-2/3 fade-up ${contentObserver.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-700 ease-out delay-150`}
           >
             <p className="text-3xl md:text-5xl font-light leading-tight mb-12 text-neutral-900 dark:text-white">
-              I bridge the gap between <span className="serif italic text-neutral-500 dark:text-neutral-400">design</span> and <span className="serif italic text-neutral-500 dark:text-neutral-400">engineering</span>.
+              Passionate about <span className="serif italic text-neutral-500 dark:text-neutral-400">intelligence</span> and <span className="serif italic text-neutral-500 dark:text-neutral-400">security</span>.
             </p>
             <div className="grid md:grid-cols-2 gap-12 text-lg font-light text-neutral-600 dark:text-neutral-400 leading-relaxed">
               <p>
-                My journey in software development is driven by a passion for creating interfaces that feel natural and intuitive. I believe that the best technology is invisible—it just works.
+                I am a CSAIML student at GL Bajaj, driven by a passion for solving complex problems through Machine Learning and crafting intuitive frontend interfaces.
               </p>
               <p>
-                With over 5 years of experience in full-stack development, I specialize in the JavaScript ecosystem, focusing on performance, accessibility, and clean architecture.
+                My expertise spans predictive modeling, regression, and classification, complemented by a strong foundation in cybersecurity, networking, and web pentesting.
               </p>
             </div>
           </div>
