@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
+
+A personal portfolio website built with Next.js, featuring a distinctive dark aesthetic with medical imaging projects showcase.
+
+## Features
+
+- **Hero Section** - Animated introduction with typing effects
+- **About** - Personal bio and background
+- **Skills** - Technical expertise showcase
+- **Projects** - Medical imaging visualizations (Pneumonia detection, TB visualization)
+- **Contact** - Contact form and social links
+- **Theme Switching** - Light/Dark mode toggle
+- **Mobile Responsive** - Fully responsive with hamburger menu
+- **Animations** - Scroll-triggered reveal animations
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: CSS Modules + CSS Variables
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Geist (Next.js font)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── components/       # React components
+│   ├── About.tsx
+│   ├── AnimatedSection.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── MobileMenu.tsx
+│   ├── Navigation.tsx
+│   ├── ProjectCard.tsx
+│   ├── Projects.tsx
+│   ├── Skills.tsx
+│   └── ThemeProvider.tsx
+├── hooks/            # Custom React hooks
+│   ├── useIntersectionObserver.ts
+│   ├── useTheme.ts
+│   └── useTypingEffect.ts
+├── types/            # TypeScript type definitions
+│   └── portfolio.ts
+├── globals.css       # Global styles
+├── layout.tsx        # Root layout
+└── page.tsx          # Home page
 
-## Learn More
+public/
+└── images/           # Project images
+    ├── pneumonia.png
+    └── tb_viz.png
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Edit `app/components/Hero.tsx` to update the hero section
+- Modify `app/components/Projects.tsx` to add/remove projects
+- Update CSS variables in `app/globals.css` for theming
+- Edit `app/components/About.tsx`, `Skills.tsx`, and `Contact.tsx` as needed
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
