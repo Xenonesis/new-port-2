@@ -2,17 +2,34 @@
 
 
 
-const skills = [
-  { name: 'Programming', description: 'C, C++, Python, DSA' },
-  { name: 'Machine Learning', description: 'Numpy, Pandas, SVM, KNN' },
-  { name: 'ML Techniques', description: 'Classification, Regression' },
-  { name: 'Frontend', description: 'HTML/CSS, JavaScript' },
-  { name: 'Cybersecurity', description: 'Networking & Cloud' },
-  { name: 'Pentesting', description: 'Web Pentesting, Brute Force' },
-  { name: 'Security Tools', description: 'Crunch, Cewl, Steganography' },
-];
-
 import AnimatedSection from './AnimatedSection';
+import { 
+  SiC, 
+  SiCplusplus, 
+  SiPython, 
+  SiNumpy, 
+  SiPandas, 
+  SiScikitlearn, 
+  SiJavascript, 
+  SiHtml5, 
+  SiCss, 
+  SiKalilinux,
+  SiWireshark
+} from 'react-icons/si';
+
+const techIcons = [
+  { Icon: SiC, name: 'C' },
+  { Icon: SiCplusplus, name: 'C++' },
+  { Icon: SiPython, name: 'Python' },
+  { Icon: SiNumpy, name: 'Numpy' },
+  { Icon: SiPandas, name: 'Pandas' },
+  { Icon: SiScikitlearn, name: 'Scikit-learn' },
+  { Icon: SiJavascript, name: 'JavaScript' },
+  { Icon: SiHtml5, name: 'HTML5' },
+  { Icon: SiCss, name: 'CSS3' },
+  { Icon: SiKalilinux, name: 'Kali Linux' },
+  { Icon: SiWireshark, name: 'Wireshark' },
+];
 
 export default function Skills() {
   return (
@@ -23,12 +40,10 @@ export default function Skills() {
             <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">Technical Stack</h2>
           </AnimatedSection>
           <AnimatedSection delay={0.15} className="md:w-2/3">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8">
-              {skills.map((skill) => (
-                <div key={skill.name} className="group">
-                  <div className="h-[1px] w-full bg-neutral-200 dark:bg-neutral-800 mb-4 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-500"></div>
-                  <h3 className="text-lg font-medium mb-1 text-neutral-900 dark:text-white">{skill.name}</h3>
-                  <p className="text-sm text-neutral-500">{skill.description}</p>
+            <div className="flex flex-wrap gap-12 md:gap-16">
+              {techIcons.map((tech) => (
+                <div key={tech.name} title={tech.name} className="group flex justify-center items-center">
+                  <tech.Icon className="w-16 h-16 md:w-20 md:h-20 text-neutral-300 dark:text-neutral-700 transition-all duration-500 group-hover:text-black dark:group-hover:text-white group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                 </div>
               ))}
             </div>
