@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
         <div className="fade-in">
           <h2 className="text-[8vw] md:text-[6vw] font-medium tracking-tight leading-none mb-12 hover:text-neutral-500 transition-colors duration-500 cursor-default">
-            <a href="mailto:officialprachi1211@gmail.com">Let's Talk</a>
+            <a href="mailto:officialprachi1211@gmail.com">Let&apos;s Talk</a>
           </h2>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-sm font-medium uppercase tracking-widest text-neutral-500">
             <a href="mailto:officialprachi1211@gmail.com" className="hover:text-black dark:hover:text-white transition-colors">officialprachi1211@gmail.com</a>

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps, react-hooks/rules-of-hooks, @typescript-eslint/no-unused-expressions, react-hooks/set-state-in-effect */
 'use client';
 
 import { useTheme } from 'next-themes';

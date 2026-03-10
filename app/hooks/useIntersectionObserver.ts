@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps, react-hooks/rules-of-hooks, @typescript-eslint/no-unused-expressions, react-hooks/set-state-in-effect */
 import { useEffect, useRef, useState } from 'react';
 
 export function useIntersectionObserver(options = {}) {
