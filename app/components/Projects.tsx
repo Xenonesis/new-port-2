@@ -2,6 +2,7 @@
 
 import { Project } from '../types/portfolio';
 import ProjectCard from './ProjectCard';
+import AnimatedSection from './AnimatedSection';
 
 const projects: Project[] = [
   {
@@ -28,11 +29,11 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 md:py-32">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="mb-16 fade-in">
+        <AnimatedSection className="mb-16">
           <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400 mb-4">
             Selected Works
           </h2>
-        </div>
+        </AnimatedSection>
 
         <div className="space-y-40">
           {projects.map((project, index) => (

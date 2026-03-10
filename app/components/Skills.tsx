@@ -12,15 +12,17 @@ const skills = [
   { name: 'Security Tools', description: 'Crunch, Cewl, Steganography' },
 ];
 
+import AnimatedSection from './AnimatedSection';
+
 export default function Skills() {
   return (
     <section id="skills" className="py-20 md:py-32 border-t border-neutral-200 dark:border-neutral-900">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row gap-20">
-          <div className="md:w-1/3 fade-in">
+          <AnimatedSection className="md:w-1/3">
             <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">Technical Stack</h2>
-          </div>
-          <div className="md:w-2/3 fade-in delay-150">
+          </AnimatedSection>
+          <AnimatedSection delay={0.15} className="md:w-2/3">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8">
               {skills.map((skill) => (
                 <div key={skill.name} className="group">
@@ -30,7 +32,7 @@ export default function Skills() {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

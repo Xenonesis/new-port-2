@@ -1,6 +1,7 @@
 'use client';
 
 import { Project } from '../types/portfolio';
+import AnimatedSection from './AnimatedSection';
 
 
 interface ProjectCardProps {
@@ -12,7 +13,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isEven = index % 2 === 0;
 
   return (
-    <div className="group relative grid md:grid-cols-12 gap-8 items-center fade-in">
+    <AnimatedSection className="group relative grid md:grid-cols-12 gap-8 items-center">
       {/* Project Number */}
       <div className="md:col-span-2 text-neutral-300 dark:text-neutral-700 text-8xl font-light leading-none select-none">
         {project.number}
@@ -72,6 +73,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </a>
         </div>
       </div>
-    </div>
+    </AnimatedSection>
   );
 }

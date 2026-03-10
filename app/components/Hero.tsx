@@ -1,7 +1,7 @@
 'use client';
 
 import { useTypingEffect } from '../hooks/useTypingEffect';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import AnimatedSection from './AnimatedSection';
 
 const phrases = ['model', 'secure', 'develop', 'analyze'];
 
@@ -14,15 +14,10 @@ export default function Hero() {
     initialDelay: 1000,
   });
 
-  const { ref, isVisible } = useIntersectionObserver();
-
   return (
     <section className="min-h-screen flex items-end pb-20 md:pb-32 pt-40 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full">
-        <div
-          ref={ref as React.RefObject<HTMLDivElement>}
-          className={`max-w-6xl fade-up ${isVisible ? 'visible' : ''}`}
-        >
+        <AnimatedSection className="max-w-6xl">
           <h1 className="text-[13vw] md:text-[9vw] font-medium leading-[0.85] tracking-tighter mb-4 text-neutral-900 dark:text-white">
             Prachi <br />
             <span className="serif italic font-light ml-[5vw] md:ml-[10vw]">Upadhyay</span>
@@ -34,7 +29,7 @@ export default function Hero() {
 
           <div className="flex flex-col md:flex-row justify-between items-end border-t border-neutral-200 dark:border-neutral-800 pt-8 mt-24">
               <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 max-w-sm font-light leading-relaxed mb-8 md:mb-0">
-              CSAIML student at GL Bajaj. Focused on Machine Learning, Frontend Development, and Cybersecurity.
+              <span className="font-medium text-neutral-900 dark:text-neutral-100">CSAIML student at GL Bajaj</span>. Focused on <span className="font-medium text-neutral-900 dark:text-neutral-100">Machine Learning</span>, <span className="font-medium text-neutral-900 dark:text-neutral-100">Frontend Development</span>, and <span className="font-medium text-neutral-900 dark:text-neutral-100">Cybersecurity</span>.
             </p>
             <div className="flex gap-8">
               <a href="#projects" className="group relative text-sm font-medium overflow-hidden">
@@ -44,7 +39,7 @@ export default function Hero() {
               </a>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
