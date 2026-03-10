@@ -13,6 +13,7 @@ const projects: Project[] = [
     tags: ['Python', 'Deep Learning', 'Classification', 'Healthcare'],
     liveUrl: '#',
     sourceUrl: 'https://github.com/prachiupadhyay1211/pneumonia-detection-ml',
+    image: '/images/pneumonia.png',
   },
   {
     id: '2',
@@ -22,6 +23,7 @@ const projects: Project[] = [
     tags: ['Data Visualization', 'Pandas', 'Numpy', 'Data Science'],
     liveUrl: '#',
     sourceUrl: 'https://github.com/prachiupadhyay1211/TB_Visualization',
+    image: '/images/tb_viz.png',
   }
 ];
 
