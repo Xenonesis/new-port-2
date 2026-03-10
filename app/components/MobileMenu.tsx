@@ -8,7 +8,6 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
-  // Handle body scroll lock when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -16,13 +15,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       document.body.style.overflow = '';
     }
 
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
 
-  // Handle escape key to close menu
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
@@ -49,7 +46,6 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       aria-label="Mobile navigation menu"
       aria-hidden={!isOpen}
     >
-      {/* Close Button */}
       <button 
         className="absolute top-8 right-8 p-4 hover:opacity-70 transition-opacity"
         onClick={onClose}
@@ -60,7 +56,6 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         </svg>
       </button>
 
-      {/* Navigation Links */}
       <nav className="space-y-8 text-center">
         <a 
           href="#about" 

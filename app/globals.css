@@ -26,16 +26,17 @@ body {
   color: var(--foreground);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   letter-spacing: -0.03em;
 }
 
-/* Utility Classes */
 .serif {
   font-family: var(--font-serif), serif;
 }
 
-/* Typing Cursor */
 .typing-cursor {
   display: inline-block;
   width: 3px;
@@ -47,11 +48,15 @@ h1, h2, h3, h4 {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
-/* Image Reveal */
 .image-reveal {
   clip-path: inset(0 100% 0 0);
   transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
@@ -60,7 +65,6 @@ h1, h2, h3, h4 {
   clip-path: inset(0 0 0 0);
 }
 
-/* Premium Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -75,7 +79,6 @@ h1, h2, h3, h4 {
   background-color: #333;
 }
 
-/* Selection Styling */
 ::selection {
   background-color: #000;
   color: #fff;

@@ -12,7 +12,6 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -24,7 +23,6 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="flex justify-between items-center h-24">
-          {/* Logo */}
           <a 
             href="#" 
             className="text-xl font-medium tracking-tighter hover:opacity-70 transition-opacity"
@@ -33,7 +31,6 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
             prachi.dev
           </a>
           
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-12">
             <a 
               href="#about" 
@@ -59,7 +56,6 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
             >
               Contact
             </a>
-            {/* Theme Toggle Links */}
             <div className="flex items-center gap-4 ml-4 border-l border-neutral-300 dark:border-neutral-700 pl-8">
               <button 
                 className={`hover:opacity-70 transition-opacity text-xs font-semibold uppercase tracking-wider ${mounted && theme === 'light' ? 'text-black dark:text-white underline underline-offset-4' : 'text-neutral-500'}`}
@@ -85,7 +81,6 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button 
               className="p-2 -mr-2"

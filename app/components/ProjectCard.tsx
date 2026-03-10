@@ -15,12 +15,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <AnimatedSection className="group relative grid md:grid-cols-12 gap-8 items-center">
-      {/* Project Number */}
       <div className="md:col-span-2 text-neutral-300 dark:text-neutral-700 text-8xl font-light leading-none select-none">
         {project.number}
       </div>
 
-      {/* Project Image */}
       <div
         className={`md:col-span-6 relative aspect-[4/3] bg-neutral-100 dark:bg-neutral-900 overflow-hidden ${
           !isEven ? 'md:order-last' : ''
@@ -54,7 +52,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
 
-      {/* Project Info */}
       <div
         className={`md:col-span-4 flex flex-col justify-end h-full pl-0 md:pl-12 ${
           !isEven ? 'md:order-first' : ''
