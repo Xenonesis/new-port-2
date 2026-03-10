@@ -25,13 +25,11 @@ A personal portfolio website built with Next.js, featuring a distinctive dark ae
 ## Getting Started
 
 ```bash
-# Install dependencies
 npm install
 
 # Run development server
 npm run dev
 
-# Build for production
 npm run build
 
 # Start production server
