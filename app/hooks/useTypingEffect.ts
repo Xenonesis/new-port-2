@@ -19,39 +19,52 @@ export function useTypingEffect({
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isStarted, setIsStarted] = useState(false);
+  const [isStarted, setIsStarted] = useState(initialDelay === 0);
 
   useEffect(() => {
-    const startTimer = setTimeout(() => setIsStarted(true), initialDelay);
-    return () => clearTimeout(startTimer);
-  }, [initialDelay]);
+    if (!isStarted) {
+      const startTimer = setTimeout(() => setIsStarted(true), initialDelay);
+      return () => clearTimeout(startTimer);
+    }
 
-  useEffect(() => {
-    if (!isStarted) return;
+    if (phrases.length === 0) return;
 
     const currentPhrase = phrases[phraseIndex];
-    
+    let timeoutDelay = isDeleting ? deletingSpeed : typingSpeed;
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      timeoutDelay = pauseDuration;
+    }
+
     const timer = setTimeout(() => {
-      if (!isDeleting) {
-        if (charIndex < currentPhrase.length) {
-          setDisplayText(currentPhrase.substring(0, charIndex + 1));
-          setCharIndex(charIndex + 1);
-        } else {
-          setTimeout(() => setIsDeleting(true), pauseDuration);
-        }
-      } else {
-        if (charIndex > 0) {
-          setDisplayText(currentPhrase.substring(0, charIndex - 1));
-          setCharIndex(charIndex - 1);
-        } else {
-          setIsDeleting(false);
-          setPhraseIndex((phraseIndex + 1) % phrases.length);
-        }
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        setIsDeleting(true);
+        return;
       }
-    }, isDeleting ? deletingSpeed : typingSpeed);
+
+      if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setPhraseIndex(prev => (prev + 1) % phrases.length);
+        return;
+      }
+
+      const nextCharIndex = charIndex + (isDeleting ? -1 : 1);
+      setCharIndex(nextCharIndex);
+      setDisplayText(currentPhrase.substring(0, nextCharIndex));
+    }, timeoutDelay);
 
     return () => clearTimeout(timer);
-  }, [isStarted, charIndex, isDeleting, phraseIndex, phrases, typingSpeed, deletingSpeed, pauseDuration]);
+  }, [
+    isStarted,
+    charIndex,
+    isDeleting,
+    phraseIndex,
+    phrases,
+    typingSpeed,
+    deletingSpeed,
+    pauseDuration,
+    initialDelay,
+  ]);
 
   return displayText;
 }

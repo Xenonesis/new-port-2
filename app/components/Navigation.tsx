@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps, react-hooks/rules-of-hooks, @typescript-eslint/no-unused-expressions, react-hooks/set-state-in-effect */
 'use client';
 
 import { useTheme } from 'next-themes';
@@ -13,7 +12,7 @@ export default function Navigation({ onMenuToggle }: NavigationProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-     
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
